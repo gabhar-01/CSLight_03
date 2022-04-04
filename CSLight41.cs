@@ -27,21 +27,23 @@ namespace CSLight41
                 {
                     array[i, j] = random.Next(minArrayCount, maxArrayCount);
                     Console.Write(array[i, j] + " ");
-
-                    if (i == requestedRow)
-                    {
-                        sumOfRequestedRow += array[i, j];
-                    }
-
-                    if (j == requestedColumn)
-                    {
-                        multiplyOfRequestedColumn *= array[i, j];
-                    }
                 }
                 Console.WriteLine();
             }
 
-            Console.WriteLine("\nСумма " + requestedRow + " строки равна " + sumOfRequestedRow + ". Произведение " + requestedColumn + " столбца равно " + multiplyOfRequestedColumn + ".");
+            for (int i = minArrayIndex; i < array.GetLength(1); i++)
+            {
+                sumOfRequestedRow += array[requestedRow, i]; 
+            }
+
+            Console.WriteLine("\nСумма " + requestedRow + " строки равна " + sumOfRequestedRow + ".");
+
+            for (int i = minArrayIndex; i < array.GetLength(0); i++)
+            {
+                multiplyOfRequestedColumn *= array[i, requestedColumn];
+            }
+
+            Console.WriteLine("\nПроизведение " + requestedColumn + " столбца равно " + multiplyOfRequestedColumn + ".");
             Console.ReadKey();       
         }
     }
