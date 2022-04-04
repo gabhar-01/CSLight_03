@@ -10,7 +10,6 @@ namespace CSLight50
             bool isRunning = true;
 
             string sumCommand = "sum";
-            int sum = 0;
             string exitCommand = "exit";
 
             int[] array = new int[0];
@@ -25,12 +24,14 @@ namespace CSLight50
 
                 if (userInput == sumCommand)
                 {
+                    int sum = 0;
+
                     foreach (int number in array)
                     {
                         sum += number;
                     }
+
                     Console.WriteLine(sum);
-                    sum = 0;
                 }
                 else if (userInput == exitCommand)
                 {
@@ -39,10 +40,12 @@ namespace CSLight50
                 else
                 {
                     int[] tempArray = new int[array.Length + 1];
+
                     for (int i = 0; i < array.Length; i++)
                     {
                         tempArray[i] = array[i];
                     }
+
                     tempArray[tempArray.Length - 1] = Convert.ToInt32(userInput);
                     array = tempArray;
                 }
