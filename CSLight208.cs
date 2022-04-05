@@ -9,7 +9,7 @@ namespace CSLight208
             string phrase = "Перестаньте убивать селёдку ради шуб!";
             string[] separateWords = phrase.Split(' ');
 
-            foreach (var oneWord in separateWords)
+            foreach (string oneWord in separateWords)
             {
                 Console.WriteLine(oneWord);
             }
